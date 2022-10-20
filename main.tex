@@ -1,0 +1,181 @@
+\documentclass[UTF8]{ctexart}
+\usepackage[T1]{fontenc}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage[export]{adjustbox}
+\usepackage{tikz}
+\usepackage{draftwatermark}
+\usepackage{makecell}
+\usepackage[normalem]{ulem}
+\usepackage[a4paper]{geometry}
+\newgeometry{top=1cm,bottom=1cm,left=0.5cm,right=0.5cm}
+\setlength\parindent{0pt}
+\begin{document}
+\include{macro.tex}
+\DraftwatermarkOptions{text=\heiti \fbox{\textWatermark}}
+\pagenumbering{gobble}
+
+\begin{center}
+    \LARGE \textbf{\textHospitalName 检验科报告单}
+\end{center}
+
+\vspace*{0.5cm}
+
+{\kaishu{病人类型：}} 门诊病人
+
+\blockHRule
+
+\styleNormalText
+\begin{tabularx}{\textwidth}{*{4}{Y}}
+    姓 \space 名：\textPatientName
+    &
+    科 \space 室：\textDepName
+    &
+    样 \space 本 \space 类 \space 型：静脉血
+    & 
+    检 \space 验 \space 序 \space 号：\textReportID
+    \\
+    性 \space 别：\textPatientGender
+    &
+    床 \space 号：
+    &
+    \multicolumn{2}{l}{临 \space 床 \space 诊 \space 断：一般性检查，其他的}
+    \\
+    年 \space 龄：\textPatientAge
+    &
+    病 \space 人 \space 类 \space 型：门诊病人
+    &
+    备 \space 注：
+    &
+    条 \space 形 \space 码：\textBarcodeID
+    \\
+    就  \space 诊 \space 号：\textPatientID
+    &
+    送 \space 检 \space 医 \space 生：\textDoctorName
+    & & 
+    \\ 
+\end{tabularx}
+
+\vspace{0.1cm}
+
+\blockHRule
+
+\vspace*{0.2cm}
+
+{
+\def\arraystretch{0.5}
+\begin{tabularx}{\textwidth}{*{4}{Y}}
+    \hspace{1pc} 检 \space 验 \space 项 \space 目
+    &
+    检 \space 验 \space 结 \space 果
+    &
+    单 \space 位
+    &
+    参 \space 考 \space 值
+\vspace*{0.2cm}
+\\
+\hline
+\\
+\hspace{1pc} 促黄体生成素（LH） & \valueLH & miu/ml &
+\blockRefValue{
+    男性: 1.4 - 7.7
+    \\
+    女性卵泡期：1.9 - 11.6
+    \\
+    黄体期：0.8 - 10.5
+    \\
+    排卵期：12.9 - 105.2
+    \\
+    绝经期：6.6 - 64.4
+}
+\\
+\hspace{1pc} 促卵泡生成素（FSH） & \valueFSH & miu/ml &
+\blockRefValue{
+    男性: 1.5 - 12.4
+    \\
+    女性卵泡期：3.5 - 12.5
+    \\
+    黄体期：1.7 - 7.7
+    \\
+    排卵期：4.7 - 21.5
+    \\
+    绝经期：25.8 - 134.8
+}
+\\
+\hspace{1pc} 孕酮（PROG） & \valuePROG & ng/ml &
+\blockRefValue{
+    男性: 0.1 - 2.1
+    \\
+    女性卵泡期：0.2 - 1.6
+    \\
+    排卵期：0.3 - 2.1
+    \\
+    黄体期：1.8 - 22.5
+    \\
+    绝经期：0.04 - 1.05
+    \\
+    孕1-12周：3.9 - 60
+    \\
+    孕13-24周：15.4 - 60
+}
+\\
+\hspace{1pc} 催乳素（PRL） & \valuePRL & ng/ml &
+\blockRefValue{
+    女性绝经前：3.8 - 30.7
+    \\
+    女性绝经后：3.2 - 24.9
+    \\
+    男性：3.0 - 16.5
+}
+\\
+\hspace{1pc} 睾酮（TESTO） & \valueTESTO & ng/ml & 
+\blockRefValue{1.82 - 8.11}
+\\
+\hspace{1pc} 雌二醇（E2） & \valueEE & pg/ml &
+\blockRefValue{
+    男性：0 - 84
+    \\
+    女性卵泡期：0 - 138
+    \\
+    排卵期：100 - 440
+    \\
+    黄体期：31 - 317
+    \\
+    绝经期：0 - 84
+}
+\\
+\end{tabularx}
+
+\vspace*{\fill}
+}
+
+\blockHRule{
+\def\arraystretch{1.2}
+\begin{tabularx}{\textwidth}{*{3}{Y}}
+采样时间：\textSampleDate
+&
+接收时间：\textRecvDate
+&
+报告时间：\textReportDate
+\end{tabularx}
+}
+
+\begin{flushright}
+    检验人：\hspace*{2cm}
+    \begin{tikzpicture}[remember picture,overlay]
+    \node [xshift=-1cm,yshift=0.4cm]{
+        \includegraphics[width=2cm]{images/sign.png} 
+    };
+    \end{tikzpicture}
+    审核人：\hspace*{2cm}
+    \begin{tikzpicture}[remember picture,overlay]
+        \node [xshift=-1cm,yshift=0.4cm]{
+            \includegraphics[width=2cm]{images/sign.png} 
+        };
+    \end{tikzpicture}
+\end{flushright}
+
+注：此报告单只对该标本负责，如有疑问请尽快提出。联系电话：\textHospitalContact
+
+\pagenumbering{gobble}
+\end{document}

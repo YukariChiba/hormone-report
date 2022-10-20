@@ -1,0 +1,52 @@
+% User Defined Values
+
+\newcommand{\textHospitalName}{第三新东京市人民医院}
+\newcommand{\textDepName}{内科}
+\newcommand{\textPatientName}{羊女士}
+\newcommand{\textPatientGender}{女性}
+\newcommand{\textPatientAge}{114514 岁}
+\newcommand{\textHospitalContact}{010-1926817}
+\newcommand{\textSampleDate}{2022-06-04 19:08:09}
+\newcommand{\textRecvDate}{2022-06-15 19:08:09}
+\newcommand{\textReportDate}{2022-08-17 19:08:09}
+\newcommand{\textDoctorName}{赵紫羊}
+
+\newcommand{\textReportID}{\textcircled{9}}
+\newcommand{\textBarcodeID}{0002001989}
+\newcommand{\textPatientID}{2208170012}
+
+% Values
+
+\newcommand{\valueLH}{ 1.00 }
+\newcommand{\valueFSH}{ 0.10 }
+\newcommand{\valuePROG}{ 0.5 }
+\newcommand{\valuePRL}{ 15.00 }
+\newcommand{\valueTESTO}{ 0.15 \hspace*{0.5cm} $\downarrow$  }
+\newcommand{\valueEE}{ 233.33 }
+
+
+% Warning: Set this value to blank may be criminal in some countries and regions.
+\newcommand{\textWatermark}{模板示例}
+
+% End
+
+\newcommand{\styleNormalText}{\songti \fontsize{10}{10} \selectfont }
+\newcommand{\styleSmallText}{\songti \fontsize{8}{8} \selectfont }
+\newcommand{\blockUnderlinedText}[1]
+    {\uline{\space\space #1 \space\space}}
+\newcommand{\blockHRule}
+    {\vspace{0.2cm}\hrule height 1.5pt}
+\newcommand{\blockRefValue}[1]{
+{
+    \def\arraystretch{1}
+    \styleSmallText
+    \begin{tabular}[t]{@{}l@{}}
+        #1
+    \end{tabular}
+}
+\vspace*{0.2cm}
+}
+
+\newcolumntype{Y}{>{\arraybackslash}X}
+\def\arraystretch{2}
+\setlength\arrayrulewidth{1.5pt}
